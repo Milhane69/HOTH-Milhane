@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stats.css"> <!-- CSS spécifique à la page stats -->
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@latest"></script>
+    <script src="js/transition.js" defer></script> <!-- Inclure le script de transition -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- CSS spécifique à la page contact -->
+    <title>Statistiques</title>
+</head>
+<body>
+    <div class="transition-effect"></div>
+    <div class="page-transition"></div>
+    <!-- Header du site -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="informations.html">Informations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Décor de fond -->
+    <div class="background">
+        <div class="moon">
+            <div class="crater crater-1"></div>
+            <div class="crater crater-2"></div>
+            <div class="crater crater-3"></div>
+            <div class="crater crater-4"></div>
+        </div>
+        <div id="asteroids-container" class="asteroids"></div>
+    </div>
+
+    <!-- Contenu principal avec Power BI -->
+    <div class="content">
+        <div class="powerbi-container">
+            <!-- Remplacez l'URL ci-dessous par l'URL de votre rapport Power BI -->
+            <iframe title="Hoth" width="700" height="340.5" src="https://app.powerbi.com/view?r=eyJrIjoiYzU1M2ZiNTctYmZiYy00M2U2LWEzNDYtYTU5YTVlYjVhNDk3IiwidCI6ImUyMWU5NzgzLWQwYTAtNDhmOC04NTBlLTBiMDgxYjQ2ZDc4OCIsImMiOjh9&pageName=693ae732b5f01ff2d2ee" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer du site -->
+    <footer>
+        <p>&copy; 2024 RABEHI-MILHANE Hoth. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Lier le fichier JavaScript -->
+    <script src="js/stats.js"></script>
+</body>
+</html>
