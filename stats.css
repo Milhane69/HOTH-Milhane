@@ -24,6 +24,7 @@ header {
     backdrop-filter: blur(10px); /* Ajoute un effet de flou */
 }
 
+/* Navigation */
 header nav ul {
     list-style-type: none;
     margin: 0;
@@ -68,8 +69,9 @@ footer {
     position: relative;
     z-index: 2; /* Position avant le décor */
     text-align: center;
-    padding: 120px 20px 80px; /* Ajuste le padding pour laisser de l'espace pour le header et le footer */
-    height: calc(100vh - 200px); /* Hauteur disponible après le header et le footer */
+    padding-top: 100px; /* Ajuste le padding pour laisser de l'espace pour le header */
+    padding-bottom: 80px; /* Laisse de l'espace pour le footer */
+    height: calc(100vh - 180px); /* Hauteur disponible après le header et le footer */
     display: flex;
     justify-content: center;
     align-items: center;
