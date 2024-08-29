@@ -6,8 +6,9 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
-    background-color: #0a192f; /* Couleur de fond pour le décor */
+    background-color: #8d8c8c; /* Couleur de fond différente pour la page informations */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -15,7 +16,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le header */
+    background-color: #333; /* Fond solide pour le header */
     z-index: 3; /* Au-dessus du décor */
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -43,108 +44,58 @@ header nav ul li a:hover {
     color: #66fcf1;
 }
 
+/* Contenu principal */
+.content {
+    flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
+    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header */
+    text-align: center;
+    color: #ffffff;
+    margin-top: 60px; /* Espace pour le header fixe */
+}
+
+/* Style pour les sections */
+.hoth-info, .clan-info {
+    margin: 20px auto; /* Réduit la marge supérieure */
+    text-align: left; /* Aligner le texte à gauche pour le contenu descriptif */
+    max-width: 800px; /* Limite la largeur des sections pour une meilleure lisibilité */
+}
+
+/* Style pour les titres des sections */
+.hoth-info h2, .clan-info h2 {
+    color: #66fcf1;
+    border-bottom: 2px solid #45a29e;
+    padding-bottom: 5px; /* Réduit le padding en bas pour rapprocher le titre du texte suivant */
+    margin-bottom: 10px; /* Réduit la marge inférieure pour rapprocher le titre du texte suivant */
+}
+
+/* Style pour les images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 80%; /* Ajustez la taille de l'image pour l'adapter à la mise en page */
+    height: auto;
+    border: 3px solid #66fcf1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style des paragraphes */
+.hoth-info p, .clan-info p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le footer */
+    background-color: #333; /* Fond solide pour le footer */
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
     z-index: 3; /* Au-dessus du décor */
-}
-
-/* Contenu principal */
-.content {
-    position: relative;
-    z-index: 2; /* Position avant le décor */
-    text-align: center;
-    color: #252525;
-    padding-top: 100px; /* Ajout de padding pour laisser de l'espace pour le header */
-}
-
-/* Animation de texte */
-.animate-text {
-    opacity: 0;
-    animation: fadeIn 1s forwards, moveUp 1s forwards 1s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes moveUp {
-    from {
-        transform: translateY(50px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Décor de fond */
-.background {
-    position: fixed;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #66fcf1;
-    overflow: hidden;
-    z-index: 1; /* Position arrière */
-}
-
-.moon {
-    width: 100px;
-    height: 100px;
-    background-color: #88939a;
-    border-radius: 50%;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    overflow: hidden;
-    z-index: 0; /* Position arrière */
-}
-
-.crater {
-    width: 5px;
-    height: 5px;
-    background-color: #736b84;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.moon .crater:nth-child(1) { top: 20px; left: 60px; }
-.moon .crater:nth-child(2) { top: 70px; left: 30px; }
-.moon .crater:nth-child(3) { top: 40px; left: 80px; }
-.moon .crater:nth-child(4) { top: 90px; left: 50px; }
-
-.asteroids {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Position arrière */
-}
-
-.asteroid {
-    width: 20px;
-    height: 20px;
-    background-color: #5e5e5e;
-    border-radius: 50%;
-    position: absolute;
-    animation: moveAsteroid 4s linear infinite;
-}
-
-@keyframes moveAsteroid {
-    0% { transform: translateX(100vw) scale(1); opacity: 1; }
-    50% { transform: translateX(-100vw) scale(1.5); opacity: 0.5; }
-    100% { transform: translateX(0) scale(1); opacity: 1; }
+    margin-top: auto; /* Footer en bas de la page */
 }
