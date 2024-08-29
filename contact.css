@@ -87,10 +87,10 @@ footer {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-.icon.twitter { background-image: url('twitter-icon.png'); }
-.icon.coc { background-image: url('clashofclans-icon.png'); }
-.icon.discord { background-image: url('discord-icon.png'); }
-.icon.email { background-image: url('email-icon.png'); }
+.icon.twitter { background-image: url('logo.png'); }
+.icon.coc { background-image: url('COC.png'); }
+.icon.discord { background-image: url('discord.png'); }
+.icon.email { background-image: url('gmail.png'); }
 
 .icon:hover {
     transform: scale(1.2); /* Agrandit l'icône au survol */
@@ -99,9 +99,10 @@ footer {
 
 /* Image au survol */
 .hover-image {
-    position: absolute;
+    position: fixed; /* Utiliser fixed pour qu'elle reste en place lorsqu'on défile */
     display: none;
     z-index: 10;
+    pointer-events: none; /* Empêche l'interaction avec l'image */
 }
 
 .hover-image img {
