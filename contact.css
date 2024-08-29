@@ -84,7 +84,7 @@ footer {
 }
 
 .icon {
-    width: 90px; /* Agrandir les icônes */
+    width: 200px; /* Agrandir les icônes */
     height: 90px;
     background-size: cover;
     background-repeat: no-repeat;
