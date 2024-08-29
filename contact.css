@@ -45,6 +45,17 @@ header nav ul li a:hover {
     color: #66fcf1;
 }
 
+/* Footer */
+footer {
+    background-color: #333; /* Fond solide pour le footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 3; /* Au-dessus du décor */
+    width: 100%;
+    margin-top: auto; /* Footer en bas de la page */
+}
+
 /* Contenu principal */
 .content {
     flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
@@ -54,18 +65,25 @@ header nav ul li a:hover {
     margin-top: 60px; /* Espace pour le header fixe */
 }
 
-/* Formulaire */
+/* Style pour le formulaire de contact */
 form {
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 600px; /* Augmente la largeur maximale du formulaire pour une meilleure lisibilité */
     text-align: left;
+    background-color: #ffffff; /* Fond blanc pour le formulaire pour contraster avec l'arrière-plan */
+    padding: 20px; /* Ajoute du padding pour une meilleure présentation du formulaire */
+    border-radius: 8px; /* Bords arrondis pour le formulaire */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour faire ressortir le formulaire */
 }
 
+/* Style pour les labels */
 label {
     display: block;
     margin-top: 10px;
+    color: #333; /* Couleur du texte des labels pour le contraste */
 }
 
+/* Style pour les champs du formulaire */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -74,6 +92,7 @@ input, textarea {
     border-radius: 4px;
 }
 
+/* Style pour le bouton d'envoi */
 button {
     margin-top: 15px;
     padding: 10px 20px;
@@ -88,25 +107,14 @@ button:hover {
     background-color: #555;
 }
 
-/* Footer */
-footer {
-    background-color: #333; /* Fond solide pour le footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 3; /* Au-dessus du décor */
-    width: 100%;
-    margin-top: auto; /* Footer en bas de la page */
-}
-
-/* Style pour la section des liens sociaux */
+/* Style pour les liens sociaux */
 .social-links {
     margin-top: 40px;
 }
 
 .social-links h2 {
     color: #66fcf1;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Réduit la marge inférieure pour rapprocher le titre du texte suivant */
 }
 
 .social-links ul {
