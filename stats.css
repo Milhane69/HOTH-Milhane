@@ -8,6 +8,8 @@ body, html {
     height: 100%;
     overflow: hidden;
     background-color: #0a192f; /* Couleur de fond pour le décor */
+    color: #ffffff;
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Header */
@@ -15,10 +17,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le header */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le header */
     z-index: 3; /* Au-dessus du décor */
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
 }
 
 header nav ul {
@@ -30,17 +33,19 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
     color: #66fcf1;
+    transform: scale(1.1); /* Agrandit légèrement le texte au survol */
 }
 
 /* Footer */
@@ -48,11 +53,13 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le footer */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le footer */
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
     z-index: 3; /* Au-dessus du décor */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
 }
 
 /* Contenu principal */
@@ -60,10 +67,9 @@ footer {
     position: relative;
     z-index: 2; /* Position avant le décor */
     text-align: center;
-    color: #ffffff;
-    padding-top: 60px; /* Ajuste le padding pour laisser de l'espace pour le header */
-    padding-bottom: 60px; /* Laisse de l'espace pour le footer */
-    height: calc(100vh - 75px); /* Hauteur disponible après le header et le footer */
+    padding-top: 80px; /* Ajuste le padding pour laisser de l'espace pour le header */
+    padding-bottom: 80px; /* Laisse de l'espace pour le footer */
+    height: calc(100vh - 160px); /* Hauteur disponible après le header et le footer */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,10 +86,11 @@ footer {
 
 iframe {
     border: none; /* Retirer la bordure de l'iframe */
-    width: 80%; /* Limite la largeur maximale de l'iframe */
-    max-width: 800px; /* Largeur maximale pour l'iframe */
-    height: 400px; /* Hauteur fixe pour l'iframe */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Ombre autour de l'iframe */
+    width: 90%; /* Limite la largeur maximale de l'iframe */
+    max-width: 900px; /* Largeur maximale pour l'iframe */
+    height: 500px; /* Hauteur fixe pour l'iframe */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Ombre autour de l'iframe */
+    border-radius: 10px; /* Coins arrondis */
 }
 
 /* Animation de texte */
@@ -125,23 +132,23 @@ iframe {
 }
 
 .moon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #88939a;
     border-radius: 50%;
     position: absolute;
     top: 50px;
     right: 50px;
-    overflow: hidden;
-    z-index: 0; /* Position arrière */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .crater {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
     background-color: #736b84;
     border-radius: 50%;
     position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .moon .crater:nth-child(1) { top: 20px; left: 60px; }
@@ -154,6 +161,7 @@ iframe {
     width: 100%;
     height: 100%;
     z-index: 0; /* Position arrière */
+    overflow: hidden;
 }
 
 .asteroid {
@@ -162,7 +170,7 @@ iframe {
     background-color: #5e5e5e;
     border-radius: 50%;
     position: absolute;
-    animation: moveAsteroid 4s linear infinite;
+    animation: moveAsteroid 6s linear infinite;
 }
 
 @keyframes moveAsteroid {
