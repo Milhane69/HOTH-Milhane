@@ -6,9 +6,9 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #8d8c8c; /* Couleur de fond différente pour la page informations */
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(120deg, #ff6f61, #6b6b83, #3f3f4e);
+    color: #ffffff;
+    scroll-behavior: smooth; /* Ajout pour un défilement fluide */
 }
 
 /* Header */
@@ -16,10 +16,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333; /* Fond solide pour le header */
+    background: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour un effet moderne */
     z-index: 3; /* Au-dessus du décor */
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou pour un look plus moderne */
 }
 
 header nav ul {
@@ -31,44 +32,54 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #66fcf1;
+    color: #ff6f61;
 }
 
 /* Contenu principal */
 .content {
-    flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
-    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header */
+    padding: 120px 20px 40px; /* Ajoute de l'espace pour le header et le footer */
     text-align: center;
-    color: #ffffff;
-    margin-top: 60px; /* Espace pour le header fixe */
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Style pour les sections */
+/* Sections */
 .hoth-info, .clan-info {
-    margin: 20px auto; /* Réduit la marge supérieure */
-    text-align: left; /* Aligner le texte à gauche pour le contenu descriptif */
-    max-width: 800px; /* Limite la largeur des sections pour une meilleure lisibilité */
+    margin: 50px auto;
+    text-align: left;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les sections */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
 
-/* Style pour les titres des sections */
+.hoth-info:hover, .clan-info:hover {
+    transform: translateY(-10px); /* Déplace légèrement la section vers le haut */
+}
+
+/* Titres des sections */
 .hoth-info h2, .clan-info h2 {
-    color: #66fcf1;
-    border-bottom: 2px solid #45a29e;
-    padding-bottom: 5px; /* Réduit le padding en bas pour rapprocher le titre du texte suivant */
-    margin-bottom: 10px; /* Réduit la marge inférieure pour rapprocher le titre du texte suivant */
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Style pour les images */
+/* Images */
 .image-container {
     display: flex;
     justify-content: center;
@@ -76,26 +87,44 @@ header nav ul li a:hover {
 }
 
 .image-container img {
-    max-width: 80%; /* Ajustez la taille de l'image pour l'adapter à la mise en page */
+    max-width: 100%;
     height: auto;
-    border: 3px solid #66fcf1;
+    border: 3px solid #ff6f61;
     border-radius: 10px;
-    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
 
-/* Style des paragraphes */
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image au hover */
+}
+
+/* Paragraphes */
 .hoth-info p, .clan-info p {
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Footer */
 footer {
-    background-color: #333; /* Fond solide pour le footer */
+    background: rgba(51, 51, 51, 0.9);
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    z-index: 3; /* Au-dessus du décor */
-    width: 100%;
-    margin-top: auto; /* Footer en bas de la page */
+    padding: 20px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
+
+/* Défilement horizontal pour la navigation entre sections */
+.section {
+    scroll-snap-align: start; /* Aligne chaque section au début */
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: y mandatory; /* Active le snapping vertical */
+    overflow-y: scroll; /* Permet le défilement vertical */
+    height: 100vh; /* Définit la hauteur totale pour le viewport */
+}
+
