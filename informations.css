@@ -56,19 +56,17 @@ header nav ul li a:hover {
 
 /* Style pour les sections */
 .hoth-info, .clan-info {
-    margin-top: 40px;
+    margin: 20px auto; /* Réduit la marge supérieure */
     text-align: left; /* Aligner le texte à gauche pour le contenu descriptif */
     max-width: 800px; /* Limite la largeur des sections pour une meilleure lisibilité */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Style pour les titres des sections */
 .hoth-info h2, .clan-info h2 {
     color: #66fcf1;
     border-bottom: 2px solid #45a29e;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 5px; /* Réduit le padding en bas pour rapprocher le titre du texte suivant */
+    margin-bottom: 10px; /* Réduit la marge inférieure pour rapprocher le titre du texte suivant */
 }
 
 /* Style pour les images */
