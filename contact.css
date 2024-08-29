@@ -7,7 +7,7 @@ body, html {
     padding: 0;
     height: 100%;
     color: #fff;
-    background-color: #0a192f; /* Fond uni sombre */
+    background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Fond dégradé élégant */
     display: flex;
     flex-direction: column;
 }
@@ -17,10 +17,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le header */
+    background-color: rgba(51, 51, 51, 0.8); /* Fond semi-transparent pour le header */
     z-index: 3; /* Au-dessus du contenu */
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 header nav ul {
@@ -32,37 +32,39 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
 header nav ul li a:hover {
-    color: #66fcf1;
+    color: #00bfff;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6); /* Effet lumineux au survol */
 }
 
 /* Footer */
 footer {
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le footer */
+    background-color: rgba(51, 51, 51, 0.8); /* Fond semi-transparent pour le footer */
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     z-index: 3; /* Au-dessus du contenu */
     width: 100%;
     margin-top: auto; /* Footer en bas de la page */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Contenu principal */
 .content {
     flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
-    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header */
+    padding: 120px 20px; /* Espace pour le header fixe et padding */
     text-align: center;
     color: #fff;
-    margin-top: 60px; /* Espace pour le header fixe */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,9 +76,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 40px;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .icon-wrapper {
@@ -87,32 +89,37 @@ footer {
 .icon-description {
     display: block;
     margin-bottom: 10px;
-    color: #66fcf1; /* Couleur de description */
-    font-size: 14px;
+    color: #00bfff; /* Couleur description */
+    font-size: 16px;
     font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.icon-description:hover {
+    color: #ffffff; /* Couleur changeante au survol */
+    transform: scale(1.1); /* Effet d'agrandissement au survol */
 }
 
 /* Icônes */
 .icon {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
-    transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, box-shadow 0.4s;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .icon.twitter { background-image: url('logo.png'); }
 .icon.coc { background-image: url('COC.png'); }
-.icon.discord { background-image: url('discord.png'); }
+.icon.discord { background-image: url('discodiscordrd-icon.png'); }
 .icon.email { background-image: url('gmail.png'); }
 
 .icon:hover {
     transform: scale(1.3); /* Agrandit l'icône au survol */
-    opacity: 1; /* Maintient l'opacité au survol */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4); /* Ombre plus marquée au survol */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Ombre plus marquée au survol */
 }
 
 /* Image au survol */
@@ -121,12 +128,12 @@ footer {
     display: none;
     z-index: 10;
     pointer-events: none; /* Évite d'interférer avec les clics */
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .hover-image img {
-    width: 150px; /* Ajuster la taille de l'image */
+    width: 180px; /* Ajuster la taille de l'image */
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
