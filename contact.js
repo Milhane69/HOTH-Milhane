@@ -8,24 +8,13 @@ document.querySelectorAll('.icon').forEach(icon => {
         hoverImage.src = this.getAttribute('data-hover');
         hoverContainer.style.display = 'block';
 
-        // Positionner l'image près de l'icône en ajustant pour le survol
+        // Positionner l'image près de l'icône
         const iconRect = this.getBoundingClientRect();
-        hoverContainer.style.top = `${iconRect.bottom + window.scrollY + 10}px`; // Ajuste la position sous l'icône
-        hoverContainer.style.left = `${iconRect.left + window.scrollX + (this.offsetWidth / 2) - (hoverContainer.offsetWidth / 2)}px`; // Centre l'image sous l'icône
+        hoverContainer.style.top = `${iconRect.top + window.scrollY - hoverContainer.offsetHeight - 10}px`; // Ajuste la position au-dessus de l'icône
+        hoverContainer.style.left = `${iconRect.left + window.scrollX + (this.offsetWidth / 2) - (hoverContainer.offsetWidth / 2)}px`; // Centre l'image horizontalement
     });
 
     icon.addEventListener('mouseleave', function () {
         document.querySelector('.hover-image').style.display = 'none';
     });
-});
-
-// Pour faire suivre l'image de survol avec la souris lors du mouvement
-document.addEventListener('mousemove', function (event) {
-    const hoverContainer = document.querySelector('.hover-image');
-    const iconRect = document.querySelector('.icon:hover')?.getBoundingClientRect();
-
-    if (iconRect) {
-        hoverContainer.style.top = `${event.clientY + 10}px`; // Positionne l'image 10px au-dessous de la souris
-        hoverContainer.style.left = `${event.clientX - (hoverContainer.offsetWidth / 2)}px`; // Centre l'image horizontalement sur la souris
-    }
 });
