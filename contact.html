@@ -27,14 +27,14 @@
     <!-- Contenu principal de la page Contact -->
     <div class="content">
         <h1>Contact</h1>
-        <p>On a pas encore conquis cette planète, revient plus tard.</p>
-        <form>
+        <!-- Formulaire avec méthode POST et action vers le script PHP -->
+        <form action="send_mail.php" method="POST">
             <label for="name">Nom:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
             <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">Envoyer</button>
         </form>
 
@@ -42,9 +42,9 @@
         <div class="social-links">
             <h2>Rejoignez-nous</h2>
             <ul>
-                <li><a href="https://twitter.com/votrecompte" target="_blank">Twitter</a></li>
-                <li><a href="https://discord.gg/votreinvite" target="_blank">Discord</a></li>
-                <li><a href="https://clashofclans.com/fr/clans/votreclan" target="_blank">Clan Clash of Clans</a></li>
+                <li><a href="https://twitter.com/Empiregalactiq?t=_a9HRWmzlnxs6hjqw2Hu5Q&s=09" target="_blank">Twitter</a></li>
+                <li><a href="https://discord.gg/BJjaWs6X" target="_blank">Discord</a></li>
+                <li><a href="https://link.clashofclans.com/fr/?action=OpenClanProfile&tag=2LVCU2QQ8" target="_blank">Clan Clash of Clans</a></li>
             </ul>
         </div>
     </div>
