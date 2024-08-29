@@ -14,18 +14,44 @@ body, html {
 
 /* Header */
 header {
-    background-color: #333;
-    z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Fond solide pour le header */
+    z-index: 3; /* Au-dessus du décor */
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #66fcf1;
+}
+
 /* Contenu principal */
 .content {
-    flex: 1; /* Le contenu principal occupe tout l'espace disponible */
-    padding: 100px 20px; 
+    flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
+    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header */
     text-align: center;
     color: #333;
+    margin-top: 60px; /* Espace pour le header fixe */
 }
 
 /* Formulaire */
@@ -64,10 +90,46 @@ button:hover {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #333; /* Fond solide pour le footer */
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    z-index: 3;
-    margin-top: auto; /* Le footer est poussé en bas de la page */
+    z-index: 3; /* Au-dessus du décor */
+    width: 100%;
+    margin-top: auto; /* Footer en bas de la page */
+}
+
+/* Style pour la section des liens sociaux */
+.social-links {
+    margin-top: 40px;
+}
+
+.social-links h2 {
+    color: #66fcf1;
+    margin-bottom: 20px;
+}
+
+.social-links ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.social-links ul li {
+    margin: 10px 0;
+}
+
+.social-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #66fcf1;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links ul li a:hover {
+    background-color: #66fcf1;
+    color: #333;
 }
