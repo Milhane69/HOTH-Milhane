@@ -8,6 +8,8 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: #8d8c8c; /* Couleur de fond différente pour la page informations */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -43,29 +45,22 @@ header nav ul li a:hover {
     color: #66fcf1;
 }
 
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333; /* Fond solide pour le footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 3; /* Au-dessus du décor */
-}
-
 /* Contenu principal */
 .content {
-    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header et le footer */
+    flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
+    padding: 100px 20px; /* Ajout de padding pour laisser de l'espace pour le header */
     text-align: center;
     color: #ffffff;
+    margin-top: 60px; /* Espace pour le header fixe */
 }
 
 /* Style pour les sections */
 .hoth-info, .clan-info {
     margin-top: 40px;
     text-align: left; /* Aligner le texte à gauche pour le contenu descriptif */
+    max-width: 800px; /* Limite la largeur des sections pour une meilleure lisibilité */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Style pour les titres des sections */
@@ -95,4 +90,15 @@ footer {
 .hoth-info p, .clan-info p {
     margin-bottom: 20px;
     line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Fond solide pour le footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 3; /* Au-dessus du décor */
+    width: 100%;
+    margin-top: auto; /* Footer en bas de la page */
 }
