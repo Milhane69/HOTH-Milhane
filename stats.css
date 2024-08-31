@@ -71,9 +71,9 @@ footer {
     position: relative;
     z-index: 2; /* Position avant le décor */
     text-align: center;
-    padding-top: 90px; /* Ajuste le padding pour laisser de l'espace pour le header */
+    padding-top: 80px; /* Ajuste le padding pour laisser moins d'espace pour le header */
     padding-bottom: 20px; /* Laisse de l'espace pour le footer */
-    min-height: calc(100vh - 90px); /* Hauteur disponible après le header */
+    min-height: calc(100vh - 100px); /* Hauteur disponible après le header */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Commence le contenu en haut */
@@ -93,5 +93,5 @@ footer {
 iframe {
     border: none; /* Retirer la bordure de l'iframe */
     width: 100%; /* Utilise toute la largeur du conteneur */
-    height: 100px; /* Hauteur fixe pour l'iframe */
+    height: 500px; /* Hauteur fixe pour l'iframe */
 }
