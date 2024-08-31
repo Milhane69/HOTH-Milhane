@@ -6,23 +6,23 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(120deg, #ff6f61, #6b6b83, #3f3f4e);
+    background: linear-gradient(135deg, #283048, #859398); /* Dégradé de gris et bleu */
     color: #ffffff;
-    scroll-behavior: smooth; /* Ajout pour un défilement fluide */
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    background: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour un effet moderne */
-    z-index: 3; /* Au-dessus du décor */
+    background: rgba(20, 20, 20, 0.9); /* Fond semi-transparent foncé */
+    z-index: 3;
     padding: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px); /* Ajoute un effet de flou pour un look plus moderne */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px); /* Effet de flou léger */
+    height: 70px; /* Hauteur fixe du header */
 }
 
+/* Navigation */
 header nav ul {
     list-style-type: none;
     margin: 0;
@@ -43,25 +43,24 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ff6f61;
+    color: #f39c12; /* Couleur orange pour le hover */
 }
 
 /* Contenu principal */
 .content {
-    padding: 120px 20px 40px; /* Ajoute de l'espace pour le header et le footer */
-    text-align: center;
+    padding: 20px;
+    margin-top: 70px; /* Espace pour que le contenu commence sous le header */
     max-width: 1200px;
     margin: auto;
+    text-align: left;
 }
 
 /* Sections */
 .hoth-info, .clan-info {
     margin: 50px auto;
-    text-align: left;
-    max-width: 800px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les sections */
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour les sections */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
@@ -72,11 +71,12 @@ header nav ul li a:hover {
 
 /* Titres des sections */
 .hoth-info h2, .clan-info h2 {
-    color: #ff6f61;
-    border-bottom: 2px solid #ff6f61;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #f39c12; /* Couleur orange pour les titres */
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.8em;
 }
 
 /* Images */
@@ -89,7 +89,7 @@ header nav ul li a:hover {
 .image-container img {
     max-width: 100%;
     height: auto;
-    border: 3px solid #ff6f61;
+    border: 3px solid #f39c12;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
@@ -100,26 +100,24 @@ header nav ul li a:hover {
 
 /* Paragraphes */
 .hoth-info p, .clan-info p {
-    margin-bottom: 20px;
-    line-height: 1.8;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* Footer */
 footer {
-    background: rgba(51, 51, 51, 0.9);
+    background: rgba(20, 20, 20, 0.9);
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Défilement horizontal pour la navigation entre sections */
-.section {
-    scroll-snap-align: start; /* Aligne chaque section au début */
-    padding: 20px;
-}
-
+/* Scroll Snapping */
 .container {
     display: flex;
     flex-direction: column;
@@ -128,3 +126,7 @@ footer {
     height: 100vh; /* Définit la hauteur totale pour le viewport */
 }
 
+.section {
+    scroll-snap-align: start; /* Aligne chaque section au début */
+    padding: 20px;
+}
