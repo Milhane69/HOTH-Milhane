@@ -9,7 +9,8 @@ body, html {
     background: linear-gradient(to bottom, #0a192f, #1e3c72); /* Dégradé de fond pour l'espace */
     color: #ffffff;
     scroll-behavior: smooth; /* Défilement fluide */
-    overflow: auto; /* Permet le défilement vertical */
+    overflow-y: auto; /* Permet le défilement vertical */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 /* Header */
@@ -21,6 +22,8 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px); /* Ajoute un effet de flou */
     height: 70px; /* Hauteur fixe du header */
+    position: fixed; /* Position fixe en haut */
+    top: 0; /* Fixe le header en haut */
 }
 
 /* Navigation */
@@ -51,16 +54,16 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Change de fixed à relative pour permettre le défilement */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le footer */
     color: #ffffff;
     text-align: center;
     padding: 15px 0;
-    z-index: 3; /* Au-dessus du décor */
+    z-index: 2; /* Au-dessus du contenu principal mais derrière le header */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px); /* Ajoute un effet de flou */
+    margin-top: 20px; /* Ajoute un espace entre le contenu et le footer */
 }
 
 /* Contenu principal */
@@ -70,11 +73,12 @@ footer {
     text-align: center;
     padding-top: 100px; /* Ajuste le padding pour laisser de l'espace pour le header */
     padding-bottom: 80px; /* Laisse de l'espace pour le footer */
-    min-height: calc(100vh - 180px); /* Hauteur disponible après le header et le footer */
+    min-height: calc(100vh - 70px); /* Hauteur disponible après le header */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse la hauteur de la page */
 }
 
 /* Conteneur Power BI */
