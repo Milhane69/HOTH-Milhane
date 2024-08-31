@@ -81,6 +81,56 @@ header nav ul li a:hover {
     font-size: 1.8em;
 }
 
+/* Texte avec effet de mini bulles */
+.text-effect {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.text-effect::before,
+.text-effect::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6f61;
+    border-radius: 50%;
+    animation: bubble 1s infinite;
+}
+
+.text-effect::before {
+    left: -15px;
+    top: -10px;
+}
+
+.text-effect::after {
+    right: -15px;
+    bottom: -10px;
+    animation-delay: 0.5s;
+}
+
+.text-effect:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+
+/* Animation des bulles */
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Images */
 .image-container {
     display: flex;
