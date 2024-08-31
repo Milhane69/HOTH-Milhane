@@ -14,15 +14,15 @@ body, html {
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
     background-color: rgba(51, 51, 51, 0.8); /* Fond semi-transparent pour le header */
     z-index: 3; /* Au-dessus du contenu */
     padding: 15px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    height: 70px; /* Hauteur fixe pour le header */
 }
 
+/* Navigation */
 header nav ul {
     list-style-type: none;
     margin: 0;
@@ -62,7 +62,8 @@ footer {
 /* Contenu principal */
 .content {
     flex: 1; /* Permet à la section contenu d'occuper tout l'espace disponible */
-    padding: 120px 20px; /* Espace pour le header fixe et padding */
+    padding: 20px;
+    margin-top: 70px; /* Espace pour le header */
     text-align: center;
     color: #fff;
     display: flex;
@@ -114,7 +115,7 @@ footer {
 
 .icon.twitter { background-image: url('logo.png'); }
 .icon.coc { background-image: url('COC.png'); }
-.icon.discord { background-image: url('discodiscordrd-icon.png'); }
+.icon.discord { background-image: url('discord-icon.png'); }
 .icon.email { background-image: url('gmail.png'); }
 
 .icon:hover {
