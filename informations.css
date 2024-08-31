@@ -6,83 +6,134 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-    color: #ffffff;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #1c1c1c, #363636); /* Dégradé sombre */
+    color: #e0e0e0; /* Texte clair */
+    scroll-behavior: smooth; /* Défilement fluide */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9);
+    background-color: rgba(28, 28, 28, 0.9); /* Fond sombre et semi-transparent */
     z-index: 3;
     padding: 15px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    height: 70px;
+    height: 70px; /* Hauteur fixe du header */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
 }
 
 header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: flex;
+    gap: 30px;
 }
 
 header nav ul li a {
-    color: #ffffff;
+    color: #e0e0e0; /* Texte clair */
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #66fcf1;
+    color: #f39c12; /* Orange clair */
+    transform: scale(1.1); /* Agrandissement au survol */
 }
 
 /* Contenu principal */
 .content {
-    padding: 80px 20px 60px;
-    text-align: center;
-    max-width: 1200px;
-    margin: auto;
+    flex: 1;
+    padding: 120px 20px; /* Espace pour le header fixe */
+    margin-top: 70px; /* Espace en haut pour le header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Sections */
-.hoth-info, .clan-info {
-    margin: 50px auto;
-    text-align: left;
-    max-width: 800px;
+/* Sections d'information */
+.section {
+    width: 80%;
+    max-width: 1000px;
+    background-color: rgba(40, 40, 40, 0.8); /* Fond semi-transparent et sombre */
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+}
+
+.section h2 {
+    color: #f39c12; /* Orange clair pour les titres */
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+/* Effet de survol sur les sections */
+.section:hover {
+    transform: translateY(-5px); /* Légère translation vers le haut */
     transition: transform 0.3s ease-in-out;
 }
 
-.hoth-info:hover, .clan-info:hover {
-    transform: translateY(-10px);
+/* Texte et bulles */
+.text-effect {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: #e0e0e0;
 }
 
-/* Titres des sections */
-.hoth-info h2, .clan-info h2 {
-    color: #66fcf1;
-    border-bottom: 2px solid #66fcf1;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.text-effect::before,
+.text-effect::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #f39c12; /* Orange clair */
+    border-radius: 50%;
+    animation: bubble 1s infinite;
+}
+
+.text-effect::before {
+    left: -12px;
+    top: -10px;
+}
+
+.text-effect::after {
+    right: -12px;
+    bottom: -10px;
+    animation-delay: 0.5s;
+}
+
+.text-effect:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+
+/* Animation des bulles */
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Images */
@@ -95,27 +146,23 @@ header nav ul li a:hover {
 .image-container img {
     max-width: 100%;
     height: auto;
-    border: 3px solid #66fcf1;
+    border: 3px solid #f39c12; /* Bordure orange clair */
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
 .image-container img:hover {
-    transform: scale(1.05);
-}
-
-/* Paragraphes */
-.hoth-info p, .clan-info p {
-    margin-bottom: 20px;
-    line-height: 1.8;
+    transform: scale(1.05); /* Agrandit légèrement l'image au hover */
 }
 
 /* Footer */
 footer {
-    background: rgba(51, 51, 51, 0.9);
-    color: #ffffff;
+    background-color: rgba(28, 28, 28, 0.9); /* Fond sombre et semi-transparent */
+    color: #e0e0e0; /* Texte clair */
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    width: 100%;
+    margin-top: auto;
 }
