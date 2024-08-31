@@ -12,14 +12,67 @@ body, html {
     overflow-x: hidden; /* Évite le défilement horizontal */
 }
 
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le header */
+    z-index: 3; /* Au-dessus du contenu */
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
+    height: 70px; /* Hauteur fixe du header */
+}
+
+/* Navigation */
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #66fcf1;
+    transform: scale(1.1); /* Agrandit légèrement le texte au survol */
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 3; /* Au-dessus du contenu */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
+}
+
 /* Contenu principal */
 .content {
-    padding: 20px; /* Padding autour du contenu */
+    padding: 80px 20px 60px; /* Espace pour le header fixe et padding pour le footer */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Hauteur minimale de la fenêtre de visualisation */
+    min-height: calc(100vh - 140px); /* Hauteur disponible après le header et le footer */
 }
 
 /* Conteneur Power BI */
@@ -35,6 +88,6 @@ body, html {
 iframe {
     border: none; /* Retirer la bordure de l'iframe */
     width: 100%; /* Utilise toute la largeur du conteneur */
-    height: 600px; /* Hauteur du rapport Power BI */
+    height: 600px; /* Hauteur fixe pour l'iframe */
     border-radius: 10px; /* Coins arrondis */
 }
