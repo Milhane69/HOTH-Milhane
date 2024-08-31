@@ -7,21 +7,20 @@ body, html {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(to bottom, #0a192f, #1e3c72); /* Dégradé de fond pour l'espace */
+    background: linear-gradient(to bottom, #0e0c28, #2b5876); /* Dégradé de fond pour l'espace */
     color: #ffffff;
     scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le header */
-    z-index: 3; /* Au-dessus du décor */
+    background-color: rgba(10, 10, 10, 0.8); /* Fond plus sombre pour le header */
+    z-index: 3;
     padding: 15px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
+    backdrop-filter: blur(8px); /* Ajoute un effet de flou */
+    height: 70px; /* Hauteur fixe du header */
 }
 
 /* Navigation */
@@ -46,7 +45,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #66fcf1;
+    color: #66fcf1; /* Couleur cyan pour le hover */
     transform: scale(1.1); /* Agrandit légèrement le texte au survol */
 }
 
@@ -55,13 +54,13 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour le footer */
+    background-color: rgba(10, 10, 10, 0.8); /* Fond plus sombre pour le footer */
     color: #ffffff;
     text-align: center;
     padding: 15px 0;
-    z-index: 3; /* Au-dessus du décor */
+    z-index: 3;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px); /* Ajoute un effet de flou */
+    backdrop-filter: blur(8px); /* Ajoute un effet de flou */
 }
 
 /* Contenu principal */
@@ -69,9 +68,10 @@ footer {
     position: relative;
     z-index: 2; /* Position avant le décor */
     text-align: center;
-    padding-top: 100px; /* Ajuste le padding pour laisser de l'espace pour le header */
+    padding-top: 20px; /* Enlève l'espace pour le header */
     padding-bottom: 80px; /* Laisse de l'espace pour le footer */
-    height: calc(100vh - 180px); /* Hauteur disponible après le header et le footer */
+    margin-top: 70px; /* Espace pour que le contenu commence sous le header */
+    height: calc(100vh - 150px); /* Hauteur disponible après le header et le footer */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,38 +145,11 @@ iframe {
 }
 
 .crater {
-    width: 8px;
-    height: 8px;
-    background-color: #736b84;
+    width: 30px;
+    height: 30px;
+    background-color: #676e73;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.moon .crater:nth-child(1) { top: 20px; left: 60px; }
-.moon .crater:nth-child(2) { top: 70px; left: 30px; }
-.moon .crater:nth-child(3) { top: 40px; left: 80px; }
-.moon .crater:nth-child(4) { top: 90px; left: 50px; }
-
-.asteroids {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Position arrière */
-    overflow: hidden;
-}
-
-.asteroid {
-    width: 20px;
-    height: 20px;
-    background-color: #5e5e5e;
-    border-radius: 50%;
-    position: absolute;
-    animation: moveAsteroid 6s linear infinite;
-}
-
-@keyframes moveAsteroid {
-    0% { transform: translateX(100vw) scale(1); opacity: 1; }
-    50% { transform: translateX(-100vw) scale(1.5); opacity: 0.5; }
-    100% { transform: translateX(0) scale(1); opacity: 1; }
+    top: 70px;
+    left: 20px;
 }
