@@ -6,23 +6,28 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(135deg, #283048, #859398); /* Dégradé de gris et bleu */
+    background: linear-gradient(120deg, #ff6f61, #6b6b83, #3f3f4e);
     color: #ffffff;
     scroll-behavior: smooth; /* Défilement fluide */
+    overflow-x: hidden; /* Évite le défilement horizontal */
 }
 
 /* Header */
 header {
+    position: fixed;
+    top: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.9); /* Fond semi-transparent foncé */
+    background: rgba(51, 51, 51, 0.9);
     z-index: 3;
     padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px); /* Effet de flou léger */
-    height: 70px; /* Hauteur fixe du header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Navigation */
 header nav ul {
     list-style-type: none;
     margin: 0;
@@ -39,44 +44,45 @@ header nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #f39c12; /* Couleur orange pour le hover */
+    color: #ff6f61;
 }
 
 /* Contenu principal */
 .content {
-    padding: 20px;
-    margin-top: 70px; /* Espace pour que le contenu commence sous le header */
+    padding: 80px 20px 60px;
+    text-align: center;
     max-width: 1200px;
     margin: auto;
-    text-align: left;
 }
 
 /* Sections */
 .hoth-info, .clan-info {
     margin: 50px auto;
+    text-align: left;
+    max-width: 800px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour les sections */
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
+    transition: transform 0.3s ease-in-out;
 }
 
 .hoth-info:hover, .clan-info:hover {
-    transform: translateY(-10px); /* Déplace légèrement la section vers le haut */
+    transform: translateY(-10px);
 }
 
 /* Titres des sections */
 .hoth-info h2, .clan-info h2 {
-    color: #f39c12; /* Couleur orange pour les titres */
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: 1.8em;
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Images */
@@ -89,44 +95,66 @@ header nav ul li a:hover {
 .image-container img {
     max-width: 100%;
     height: auto;
-    border: 3px solid #f39c12;
+    border: 3px solid #ff6f61;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
+    transition: transform 0.3s ease-in-out;
 }
 
 .image-container img:hover {
-    transform: scale(1.05); /* Agrandit légèrement l'image au hover */
+    transform: scale(1.05);
 }
 
 /* Paragraphes */
 .hoth-info p, .clan-info p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 /* Footer */
 footer {
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(51, 51, 51, 0.9);
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
-/* Scroll Snapping */
-.container {
-    display: flex;
-    flex-direction: column;
-    scroll-snap-type: y mandatory; /* Active le snapping vertical */
-    overflow-y: scroll; /* Permet le défilement vertical */
-    height: 100vh; /* Définit la hauteur totale pour le viewport */
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        margin-right: 15px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 70px 10px 50px;
+    }
+
+    .hoth-info, .clan-info {
+        padding: 15px;
+        max-width: 90%;
+    }
 }
 
-.section {
-    scroll-snap-align: start; /* Aligne chaque section au début */
-    padding: 20px;
+@media (max-width: 480px) {
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 60px 5px 40px;
+    }
+
+    .hoth-info, .clan-info {
+        padding: 10px;
+    }
 }
