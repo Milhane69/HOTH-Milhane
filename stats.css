@@ -23,9 +23,11 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px); /* Ajoute un effet de flou */
     height: 70px; /* Hauteur fixe du header */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le contenu du header */
 }
 
-/* Navigation */
 header nav ul {
     list-style-type: none;
     margin: 0;
@@ -90,4 +92,56 @@ iframe {
     width: 100%; /* Utilise toute la largeur du conteneur */
     height: 600px; /* Hauteur fixe pour l'iframe */
     border-radius: 10px; /* Coins arrondis */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Ajuste la taille du texte du header pour les petits écrans */
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Réduit le padding pour le header et le footer */
+    .content {
+        padding: 70px 10px 50px; /* Moins d'espace pour les petits écrans */
+    }
+
+    iframe {
+        height: 400px; /* Réduit la hauteur de l'iframe pour les petits écrans */
+    }
+
+    /* Stack les éléments en colonne sur les petits écrans */
+    header nav ul {
+        text-align: left;
+        padding: 0 10px; /* Ajoute du padding sur les petits écrans */
+    }
+
+    header nav ul li {
+        display: block; /* Affiche les éléments en bloc */
+        margin-right: 0;
+        margin-bottom: 10px; /* Ajoute un espacement vertical entre les éléments */
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0; /* Supprime l'espacement après le dernier élément */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste encore plus pour les très petits écrans */
+    header {
+        padding: 10px 0; /* Moins d'espace pour le header */
+    }
+
+    header nav ul li a {
+        font-size: 14px; /* Réduit la taille du texte */
+    }
+
+    .content {
+        padding: 60px 5px 40px; /* Moins d'espace pour les très petits écrans */
+    }
+
+    iframe {
+        height: 300px; /* Réduit la hauteur de l'iframe pour les très petits écrans */
+    }
 }
