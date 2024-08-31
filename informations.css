@@ -6,7 +6,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(135deg, #1f4037, #99f2c8); /* Dégradé différent pour la page Informations */
+    background: linear-gradient(135deg, #1a2a6c, #fdbb2d); /* Dégradé avec du bleu foncé et doré */
     color: #ffffff;
     scroll-behavior: smooth; /* Défilement fluide */
 }
@@ -16,11 +16,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(34, 34, 34, 0.8); /* Fond semi-transparent avec une teinte différente */
+    background: rgba(20, 20, 20, 0.9); /* Fond semi-transparent plus foncé */
     z-index: 3;
     padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px); /* Effet de flou léger */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px); /* Effet de flou léger */
 }
 
 header nav ul {
@@ -43,12 +43,12 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #99f2c8; /* Couleur de survol pour correspondre au fond */
+    color: #fdbb2d; /* Couleur de survol dorée pour correspondre au fond */
 }
 
 /* Contenu principal */
 .content {
-    padding: 100px 20px 50px; /* Espace pour le header et le footer */
+    padding: 120px 20px 60px; /* Espace pour le header et le footer */
     max-width: 1100px;
     margin: auto;
     text-align: left;
@@ -57,30 +57,32 @@ header nav ul li a:hover {
 /* Sections */
 .section {
     margin-bottom: 40px;
-    padding: 25px;
-    background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent différent */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent plus clair */
     border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Ombre subtile */
-    transition: background-color 0.3s ease-in-out; /* Animation de changement de fond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .section:hover {
-    background-color: rgba(0, 0, 0, 0.6); /* Change de couleur de fond au survol */
+    background-color: rgba(255, 255, 255, 0.2); /* Change de couleur de fond au survol */
 }
 
 /* Titres des sections */
 .section h2, .section h3 {
-    color: #1f4037; /* Couleur de titre adaptée au thème vert */
-    border-bottom: 1px solid #99f2c8;
-    padding-bottom: 8px;
+    color: #fdbb2d; /* Couleur dorée pour les titres */
+    font-size: 2em; /* Augmentation de la taille des titres */
+    font-weight: bold;
+    border-bottom: 2px solid #fdbb2d; /* Ligne de séparation dorée */
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Ombre pour une meilleure visibilité */
 }
 
 /* Paragraphes */
 .section p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 /* Images */
@@ -93,7 +95,7 @@ header nav ul li a:hover {
 .clan-image img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #99f2c8;
+    border: 2px solid #fdbb2d;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
@@ -104,12 +106,12 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background: rgba(34, 34, 34, 0.8);
+    background: rgba(20, 20, 20, 0.9);
     color: #ffffff;
     text-align: center;
     padding: 15px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
 }
 
 /* Défilement et alignement des sections */
