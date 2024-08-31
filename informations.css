@@ -4,13 +4,11 @@
 body, html {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    color: #ffffff;
     padding: 0;
     height: 100%;
-    background-color: #0a192f; /* Couleur de fond pour le décor */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Empêche le défilement */
+    background: linear-gradient(135deg, #1f4037, #99f2c8); /* Dégradé différent pour la page Informations */
+    color: #ffffff;
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 /* Header */
@@ -18,10 +16,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le header */
-    z-index: 3; /* Au-dessus du décor */
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: rgba(34, 34, 34, 0.8); /* Fond semi-transparent avec une teinte différente */
+    z-index: 3;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Effet de flou léger */
 }
 
 header nav ul {
@@ -33,130 +32,96 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #66fcf1;
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Fond semi-transparent pour le footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 3; /* Au-dessus du décor */
+    color: #99f2c8; /* Couleur de survol pour correspondre au fond */
 }
 
 /* Contenu principal */
 .content {
-    position: relative;
-    z-index: 2; /* Position avant le décor */
-    text-align: center;
+    padding: 100px 20px 50px; /* Espace pour le header et le footer */
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent différent */
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    transition: background-color 0.3s ease-in-out; /* Animation de changement de fond */
+}
+
+.section:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Change de couleur de fond au survol */
+}
+
+/* Titres des sections */
+.section h2, .section h3 {
+    color: #1f4037; /* Couleur de titre adaptée au thème vert */
+    border-bottom: 1px solid #99f2c8;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraphes */
+.section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Images */
+.clan-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.clan-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #99f2c8;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.clan-image img:hover {
+    transform: scale(1.1); /* Agrandit l'image légèrement au hover */
+}
+
+/* Footer */
+footer {
+    background: rgba(34, 34, 34, 0.8);
     color: #ffffff;
-    padding-top: 100px; /* Ajout de padding pour laisser de l'espace pour le header */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
-/* Animation de texte */
-.animate-text {
-    opacity: 0;
-    animation: fadeIn 1s forwards, moveUp 1s forwards 1s;
+/* Défilement et alignement des sections */
+.section {
+    scroll-snap-align: start;
+    padding: 20px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes moveUp {
-    from {
-        transform: translateY(50px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Décor de fond */
-.background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+.container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #66fcf1;
-    overflow: hidden;
-    z-index: 1; /* Position arrière */
-}
-
-.moon {
-    width: 100px;
-    height: 100px;
-    background-color: #88939a;
-    border-radius: 50%;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    overflow: hidden;
-    z-index: 0; /* Position arrière */
-}
-
-.crater {
-    width: 5px;
-    height: 5px;
-    background-color: #736b84;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.moon .crater:nth-child(1) { top: 20px; left: 60px; }
-.moon .crater:nth-child(2) { top: 70px; left: 30px; }
-.moon .crater:nth-child(3) { top: 40px; left: 80px; }
-.moon .crater:nth-child(4) { top: 90px; left: 50px; }
-
-.asteroids {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Position arrière */
-}
-
-.asteroid {
-    width: 20px;
-    height: 20px;
-    background-color: #5e5e5e;
-    border-radius: 50%;
-    position: absolute;
-    animation: moveAsteroid 4s linear infinite;
-}
-
-@keyframes moveAsteroid {
-    0% { transform: translateX(100vw) scale(1); opacity: 1; }
-    50% { transform: translateX(-100vw) scale(1.5); opacity: 0.5; }
-    100% { transform: translateX(0) scale(1); opacity: 1; }
-}
-
-/* Style pour l'image du clan */
-.clan-image img {
-    max-width: 80%;
-    height: auto;
-    border: 3px solid #66fcf1;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto; /* Active le défilement vertical */
+    height: 100vh; /* Hauteur totale pour le viewport */
 }
