@@ -93,5 +93,5 @@ footer {
 iframe {
     border: none; /* Retirer la bordure de l'iframe */
     width: 100%; /* Utilise toute la largeur du conteneur */
-    height: 500px; /* Hauteur fixe pour l'iframe */
+    height: 100px; /* Hauteur fixe pour l'iframe */
 }
