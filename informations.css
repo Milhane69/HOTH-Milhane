@@ -6,7 +6,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(135deg, #1a2a6c, #fdbb2d); /* Dégradé avec du bleu foncé et doré */
+    background: linear-gradient(135deg, #2a5298, #1e3c72); /* Dégradé de bleu foncé */
     color: #ffffff;
     scroll-behavior: smooth; /* Défilement fluide */
 }
@@ -16,11 +16,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.9); /* Fond semi-transparent plus foncé */
+    background: rgba(30, 30, 30, 0.9); /* Fond semi-transparent plus foncé */
     z-index: 3;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px); /* Effet de flou léger */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px); /* Effet de flou léger */
+    height: 70px; /* Hauteur fixe du header */
 }
 
 header nav ul {
@@ -32,98 +33,86 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-right: 25px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #fdbb2d; /* Couleur de survol dorée pour correspondre au fond */
+    color: #fdbb2d; /* Couleur dorée pour le hover */
 }
 
 /* Contenu principal */
 .content {
-    padding: 120px 20px 60px; /* Espace pour le header et le footer */
-    max-width: 1100px;
+    padding: 100px 20px 40px; /* Ajout de 100px de padding en haut pour laisser de l'espace pour le header */
+    max-width: 1200px;
     margin: auto;
     text-align: left;
 }
 
 /* Sections */
 .section {
-    margin-bottom: 40px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent plus clair */
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease-in-out;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour les sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
 
 .section:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Change de couleur de fond au survol */
+    transform: translateY(-10px); /* Déplace légèrement la section vers le haut */
 }
 
 /* Titres des sections */
-.section h2, .section h3 {
+.section h2 {
     color: #fdbb2d; /* Couleur dorée pour les titres */
-    font-size: 2em; /* Augmentation de la taille des titres */
-    font-weight: bold;
-    border-bottom: 2px solid #fdbb2d; /* Ligne de séparation dorée */
+    border-bottom: 2px solid #fdbb2d;
     padding-bottom: 10px;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Ombre pour une meilleure visibilité */
-}
-
-/* Paragraphes */
-.section p {
-    margin-bottom: 20px;
-    line-height: 1.7;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.8em;
 }
 
 /* Images */
-.clan-image {
+.image-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.clan-image img {
+.image-container img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #fdbb2d;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    border: 3px solid #fdbb2d;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Animation lors du hover */
 }
 
-.clan-image img:hover {
-    transform: scale(1.1); /* Agrandit l'image légèrement au hover */
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image au hover */
+}
+
+/* Paragraphes */
+.section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* Footer */
 footer {
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(30, 30, 30, 0.9);
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px);
-}
-
-/* Défilement et alignement des sections */
-.section {
-    scroll-snap-align: start;
-    padding: 20px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow-y: auto; /* Active le défilement vertical */
-    height: 100vh; /* Hauteur totale pour le viewport */
+    padding: 20px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
